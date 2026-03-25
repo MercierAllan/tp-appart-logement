@@ -17,6 +17,13 @@ class Maison : Logement
     public override void Afficher()
     {
         base.Afficher();
-        Console.WriteLine("Surface jardin : " + surfaceJardin + " mcarrées");
+        Console.WriteLine("Surface jardin : " + surfaceJardin + " mcarrés");
     }
+
+    public override double CalculerLoyer()
+    {
+        double loyer = base.CalculerLoyer();
+        loyer += 10 * surfaceJardin; 
+        return loyer;
     }
+}

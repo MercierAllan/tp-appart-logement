@@ -13,4 +13,14 @@ class Studio : Logement
         base.Afficher();
         Console.WriteLine("Meublé : " + (meuble ? "Oui" : "Non"));
     }
+
+    public override double CalculerLoyer()
+    {
+        double loyer = base.CalculerLoyer();
+        if (meuble)
+        {
+            loyer += 50;
+        }
+        return loyer;
+    }
 }
