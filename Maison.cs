@@ -10,20 +10,22 @@ class Maison : Logement
             Console.WriteLine("Surface du jardin invalide, mise à 0.");
             surfaceJardin = 0;
         }
-
         this.surfaceJardin = surfaceJardin;
     }
 
     public override void Afficher()
     {
         base.Afficher();
-        Console.WriteLine("Surface jardin : " + surfaceJardin + " mcarrés");
+        Console.WriteLine("Surface jardin : " + surfaceJardin + " mcarés");
     }
 
     public override double CalculerLoyer()
     {
-        double loyer = base.CalculerLoyer();
-        loyer += 10 * surfaceJardin; 
-        return loyer;
+        return base.CalculerLoyer() + 10 * surfaceJardin;
+    }
+
+    public override string ToString()
+    {
+        return base.ToString() + " - Jardin: " + surfaceJardin + " mcarés";
     }
 }

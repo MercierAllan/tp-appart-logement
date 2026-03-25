@@ -18,9 +18,12 @@ class Studio : Logement
     {
         double loyer = base.CalculerLoyer();
         if (meuble)
-        {
             loyer += 50;
-        }
         return loyer;
+    }
+
+    public override string ToString()
+    {
+        return base.ToString() + " - Meublé: " + (meuble ? "Oui" : "Non");
     }
 }

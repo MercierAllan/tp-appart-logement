@@ -10,7 +10,6 @@ class Appartement : Logement
             Console.WriteLine("Nombre de pièces invalide, mise à 1 par défaut.");
             nombrePieces = 1;
         }
-
         this.nombrePieces = nombrePieces;
     }
 
@@ -22,8 +21,11 @@ class Appartement : Logement
 
     public override double CalculerLoyer()
     {
-        double loyer = base.CalculerLoyer();
-        loyer += 100 * nombrePieces;
-        return loyer;
+        return base.CalculerLoyer() + 100 * nombrePieces;
+    }
+
+    public override string ToString()
+    {
+        return base.ToString() + " - Pièces: " + nombrePieces;
     }
 }

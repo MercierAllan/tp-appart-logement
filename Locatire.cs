@@ -10,10 +10,18 @@ class Locataire
         this.nom = nom;
         this.telephone = telephone;
     }
+
     public void Afficher()
     {
         Console.WriteLine("ID : " + id);
         Console.WriteLine("Nom : " + nom);
         Console.WriteLine("Téléphone : " + telephone);
     }
+
+    public override string ToString()
+    {
+        return $"Locataire {id} - {nom} - {telephone}";
+    }
+
+    public int Id { get { return id; } }
 }
